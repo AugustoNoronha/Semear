@@ -1,4 +1,4 @@
-package com.example.demo.Bowvine;
+package com.example.demo.Project;
 
 import java.sql.Blob;
 import java.util.Date;
