@@ -55,6 +55,10 @@ public class Bowvine {
     @Column(name = "image", length=50)
     private Blob Image;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
+    private User user;
+
     public Bowvine() {
 
     }

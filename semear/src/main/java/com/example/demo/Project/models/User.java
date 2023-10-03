@@ -4,59 +4,61 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = User.TABLE_NAME)
 public class User {
 
-    public interface CreateUser{}
-    public interface UpdateUser{}
-    public static final String TABLE_NAME = "owner";
-
-    @jakarta.persistence.Id
+    public interface CreateUser {}
+    public interface  UpdateUser{}
+    public static final String TABLE_NAME = "user";
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true)
-    private Long Id;
+    private Long id;
     @Column(name = "name", length=50, nullable = false)
     @NotNull(groups = {User.CreateUser.class, User.UpdateUser.class})
-    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 2, max = 50)
+    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 10, max = 50)
     private String Name;
-    @Column(name = "email", length=50, nullable = false)
+
+    @Column(name = "email", length=10, nullable = false)
     @NotNull(groups = {User.CreateUser.class, User.UpdateUser.class})
-    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 2, max = 50)
+    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 10, max = 70)
     private String Email;
     @Column(name = "document_number", length=50, nullable = false)
     @NotNull(groups = {User.CreateUser.class, User.UpdateUser.class})
-    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 2, max = 50)
+    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 11, max = 14)
     private String DocumentNumber;
-    @Column(name = "cell_number", length=50, nullable = false)
+    @Column(name = "cell_number", nullable = false)
     @NotNull(groups = {User.CreateUser.class, User.UpdateUser.class})
-    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 2, max = 50)
+    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 8, max = 11)
     private String CellNumber;
-    @Column(name = "id_address", length=50, nullable = false)
-    @NotNull(groups = {User.CreateUser.class, User.UpdateUser.class})
-    @Size(groups = {User.CreateUser.class, User.UpdateUser.class}, min = 2, max = 50)
-    private Long IdAddress;
 
+    @OneToMany(mappedBy = "user")
+    private List<Bowvine> Bowvines = new ArrayList<Bowvine>();
+
+    @OneToOne(mappedBy = "user")
+    private AddressToGo Address = new AddressToGo();
     public User() {
     }
 
-    public User(Long id, String name, String email, String documentNumber, String cellNumber,Long idAddress) {
-        Id = id;
+    public User(Long id, String name, String email, String documentNumber, String cellNumber) {
+        this.id = id;
         Name = name;
         Email = email;
         DocumentNumber = documentNumber;
         CellNumber = cellNumber;
-        IdAddress = idAddress;
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -91,23 +93,15 @@ public class User {
         CellNumber = cellNumber;
     }
 
-    public Long getAddress() {
-        return IdAddress;
-    }
-
-    public void setAddress(long idAddress) {
-        IdAddress = idAddress;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User owner)) return false;
-        return Objects.equals(getId(), owner.getId()) && Objects.equals(getName(), owner.getName()) && Objects.equals(getEmail(), owner.getEmail()) && Objects.equals(getDocumentNumber(), owner.getDocumentNumber()) && Objects.equals(getCellNumber(), owner.getCellNumber()) && Objects.equals(getAddress(), owner.getAddress());
+        if (!(o instanceof User user)) return false;
+        return Objects.equals(getId(), user.getId()) && Objects.equals(getName(), user.getName()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getDocumentNumber(), user.getDocumentNumber()) && Objects.equals(getCellNumber(), user.getCellNumber());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getEmail(), getDocumentNumber(), getCellNumber(), getAddress());
+        return Objects.hash(getId(), getName(), getEmail(), getDocumentNumber(), getCellNumber());
     }
 }
