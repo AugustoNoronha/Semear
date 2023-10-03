@@ -41,7 +41,7 @@ public class User {
     private List<Bowvine> Bowvines = new ArrayList<Bowvine>();
 
     @OneToOne(mappedBy = "user")
-    private AddressToGo Address = new AddressToGo();
+    private com.example.demo.Project.models.Address Address = new Address();
     public User() {
     }
 

@@ -6,9 +6,9 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 @Entity
-@Table(name = AddressToGo.TABLE_NAME)
+@Table(name = Address.TABLE_NAME)
 
-public class AddressToGo {
+public class Address {
     public interface CreateAddress {}
     public interface  UpdateAddress{}
     public static final String TABLE_NAME = "address";
@@ -18,42 +18,42 @@ public class AddressToGo {
     @Column(name = "id", unique = true)
     private Long id;
     @Column(name = "postal_code", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String PostalCode;
     @Column(name = "street", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String Street;
     @Column(name = "number", nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private int Number;
     @Column(name = "state", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String State;
     @Column(name = "city", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String City;
     @Column(name = "neighborhood", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String Neighborhood;
     @Column(name = "additional_field", length=50, nullable = false)
-    @NotNull(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class})
-    @Size(groups = {AddressToGo.CreateAddress.class, AddressToGo.UpdateAddress.class}, min = 2, max = 50)
+    @NotNull(groups = {Address.CreateAddress.class, Address.UpdateAddress.class})
+    @Size(groups = {Address.CreateAddress.class, Address.UpdateAddress.class}, min = 2, max = 50)
     private String AdditionalField;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 
-    public AddressToGo() {
+    public Address() {
     }
 
-    public AddressToGo(Long id, String postalCode, String street, int number, String state, String city, String neighborhood, String additionalField) {
+    public Address(Long id, String postalCode, String street, int number, String state, String city, String neighborhood, String additionalField) {
         this.id = id;
         PostalCode = postalCode;
         Street = street;
@@ -131,7 +131,7 @@ public class AddressToGo {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AddressToGo address)) return false;
+        if (!(o instanceof Address address)) return false;
         return getNumber() == address.getNumber() && Objects.equals(getId(), address.getId()) && Objects.equals(getPostalCode(), address.getPostalCode()) && Objects.equals(getStreet(), address.getStreet()) && Objects.equals(getState(), address.getState()) && Objects.equals(getCity(), address.getCity()) && Objects.equals(getNeighborhood(), address.getNeighborhood()) && Objects.equals(getAdditionalField(), address.getAdditionalField());
     }
 
