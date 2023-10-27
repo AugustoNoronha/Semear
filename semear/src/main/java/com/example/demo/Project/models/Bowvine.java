@@ -42,9 +42,6 @@ public class Bowvine {
     @NotNull(groups = CreateBowvine.class)
     @Size(groups = CreateBowvine.class, min = 2, max = 50)
     private String Coat;
-    @Column(name = "Id_owner", nullable = false)
-    @NotNull(groups = CreateBowvine.class)
-    private Long IdOwner;
     @Column(name = "grand_father", length=100, nullable = false)
     @NotNull(groups = CreateBowvine.class)
     @Size(groups = CreateBowvine.class, min = 2, max = 100)
@@ -55,11 +52,15 @@ public class Bowvine {
     @Column(name = "image", length=50)
     private Blob Image;
 
+    @ManyToOne
+    @JoinColumn(name="owner_id", nullable = false, updatable = false)
+    private Owner owner;
+
     public Bowvine() {
 
     }
 
-    public Bowvine(Long id, String type, String bornDate, String race, Float weight, String sex, String coat, Long idOwner, String grandFather, Float bloodPercent, Blob image) {
+    public Bowvine(Long id, String type, String bornDate, String race, Float weight, String sex, String coat, String grandFather, Float bloodPercent, Blob image) {
         this.id = id;
         Type = type;
         BornDate = bornDate;
@@ -67,10 +68,17 @@ public class Bowvine {
         Weight = weight;
         Sex = sex;
         Coat = coat;
-        IdOwner = idOwner;
         GrandFather = grandFather;
         BloodPercent = bloodPercent;
         Image = image;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public Long getId() {
@@ -129,14 +137,6 @@ public class Bowvine {
         Coat = coat;
     }
 
-    public Long getIdOwner() {
-        return IdOwner;
-    }
-
-    public void setIdOwner(Long idOwner) {
-        IdOwner = idOwner;
-    }
-
     public String getGrandFather() {
         return GrandFather;
     }
@@ -165,11 +165,11 @@ public class Bowvine {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Bowvine bowvine)) return false;
-        return Objects.equals(getId(), bowvine.getId()) && Objects.equals(getType(), bowvine.getType()) && Objects.equals(getBornDate(), bowvine.getBornDate()) && Objects.equals(getRace(), bowvine.getRace()) && Objects.equals(getWeight(), bowvine.getWeight()) && Objects.equals(getSex(), bowvine.getSex()) && Objects.equals(getCoat(), bowvine.getCoat()) && Objects.equals(getIdOwner(), bowvine.getIdOwner()) && Objects.equals(getGrandFather(), bowvine.getGrandFather()) && Objects.equals(getBloodPercent(), bowvine.getBloodPercent()) && Objects.equals(getImage(), bowvine.getImage());
+        return Objects.equals(getId(), bowvine.getId()) && Objects.equals(getType(), bowvine.getType()) && Objects.equals(getBornDate(), bowvine.getBornDate()) && Objects.equals(getRace(), bowvine.getRace()) && Objects.equals(getWeight(), bowvine.getWeight()) && Objects.equals(getSex(), bowvine.getSex()) && Objects.equals(getCoat(), bowvine.getCoat())  && Objects.equals(getGrandFather(), bowvine.getGrandFather()) && Objects.equals(getBloodPercent(), bowvine.getBloodPercent()) && Objects.equals(getImage(), bowvine.getImage());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getType(), getBornDate(), getRace(), getWeight(), getSex(), getCoat(), getIdOwner(), getGrandFather(), getBloodPercent(), getImage());
+        return Objects.hash(getId(), getType(), getBornDate(), getRace(), getWeight(), getSex(), getCoat(), getGrandFather(), getBloodPercent(), getImage());
     }
 }
