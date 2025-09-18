@@ -1,1 +1,0 @@
-não me deleta uai
