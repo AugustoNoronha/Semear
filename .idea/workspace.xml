@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/connection/DynamoDbProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/controllers/AnimalsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/models/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/models/UserClientModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/repository/AnimalsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/repository/interfaces/IAnimalsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/interfaces/IAnimalsServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/connection/DynamoDbProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/repository/interfaces/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/services/interfaces/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/services/interfaces/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/animal-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/user-service">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="32srsKjX70GWlCvqEa4uJpdhWMf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "D:/_dev/Semear/Semear",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="" />
+      <created>1758220327127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758220327127</updated>
+    </task>
+    <servers />
+  </component>
+</project>

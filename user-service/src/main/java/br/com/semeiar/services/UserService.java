@@ -1,36 +1,40 @@
 package br.com.semeiar.services;
 
 import br.com.semeiar.models.User;
+import br.com.semeiar.repository.interfaces.IUserRepository;
 import br.com.semeiar.services.interfaces.IUserService;
 import jakarta.inject.Singleton;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 @Singleton
 public class UserService implements IUserService {
-    private final Map<String, User> users = new HashMap<>();
+    private final IUserRepository userRepository;
+
+    public UserService(IUserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public User createUser(User user) {
         String id = UUID.randomUUID().toString();
         user.setId(id);
-        users.put(id,user);
+        user = userRepository.save(user);
         return user;
     }
 
     @Override
     public User getUserById(String id) {
-        return users.get(id);
+        return userRepository.findById(id);
     }
 
     @Override
     public List<User> listUsers() {
-        return users.values().stream().toList();
+        return userRepository.findAll();
     }
 
     @Override
-    public Boolean deleteUser(String id) {
-        return users.remove(id) != null;
+    public void deleteUser(String id) {
+        userRepository.delete(id);
     }
 }

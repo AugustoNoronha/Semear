@@ -27,14 +27,19 @@ public class UsersController {
         return user != null ? HttpResponse.ok(user) : HttpResponse.notFound();
     }
     @Get("/")
-    public List<User> listUsers() {
-        return userService.listUsers();
+    public HttpResponse<List<User>>listUsers() {
+        List<User> users = userService.listUsers();
+        if(users.size() > 0){
+            return HttpResponse.ok(users);
+        }else{
+            return HttpResponse.notFound();
+        }
     }
 
     @Delete("/{id}")
     public HttpResponse<Void> deleteUser(String id) {
-        boolean removed = userService.deleteUser(id);
-        return removed ? HttpResponse.noContent() : HttpResponse.notFound();
+        userService.deleteUser(id);
+        return HttpResponse.ok();
     }
 
 }

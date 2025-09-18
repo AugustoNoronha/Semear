@@ -1,6 +1,5 @@
 package br.com.semeiar.models;
 
-import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,19 +8,20 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
 @Serdeable
-@Introspected
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @DynamoDbBean
-public class User {
+public class Animal {
     private String id;
-    private String name;
-    private String email;
+    private String ownerId;
+    private String species;
+    private String breed;
+    private int age;
+    private double price;
 
     @DynamoDbPartitionKey
-    public String getId(){
+    public String getId() {
         return id;
     }
-
 }

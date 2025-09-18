@@ -8,5 +8,5 @@ public interface IUserService {
     User createUser(User user);
     User getUserById(String id);
     List<User> listUsers();
-    Boolean deleteUser(String id);
+    void deleteUser(String id);
 }
