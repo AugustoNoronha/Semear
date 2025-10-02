@@ -1,54 +1,62 @@
 package br.com.semeiar.services;
 
-import br.com.semeiar.clients.UserClient;
+import br.com.semeiar.clients.UserCliente2;
 import br.com.semeiar.models.Animal;
 import br.com.semeiar.models.UserClientModel;
 import br.com.semeiar.repository.interfaces.IAnimalsRepository;
 import br.com.semeiar.services.interfaces.IAnimalsServices;
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.exceptions.HttpStatusException;
 import jakarta.inject.Singleton;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+
 @Singleton
 public class AnimalsServices implements IAnimalsServices {
 
     private final IAnimalsRepository animalsRepository;
-    private final UserClient userClient;
+    private final UserCliente2 userClient;
 
-
-    public AnimalsServices(IAnimalsRepository animalsRepository, UserClient userClient) {
+    public AnimalsServices(IAnimalsRepository animalsRepository, UserCliente2 userClient) {
         this.animalsRepository = animalsRepository;
         this.userClient = userClient;
     }
 
     @Override
-    public Animal createAnimal(Animal animal) {
-        try {
-            UserClientModel owner = userClient.getUserById(animal.getOwnerId());
-        } catch (Exception e) {
-            throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Owner does not exist");
-        }
+    public CompletableFuture<Animal> createAnimal(Animal animal) {
+        return userClient.getUserById(animal.getOwnerId())
+                .thenCompose(response -> {
+                    HttpResponse<UserClientModel> httpResponse = response;
+                    if (httpResponse.getStatus() != HttpStatus.OK) {
+                        throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Usuário não encontrado");
+                    }
 
-        if (animal.getId() == null) {
-            animal.setId(UUID.randomUUID().toString());
-        }
+                    if (animal.getId() == null) {
+                        animal.setId(UUID.randomUUID().toString());
+                    }
 
-        return animalsRepository.save(animal);
+                    return animalsRepository.save(animal);
+                })
+                .exceptionally(e -> {
+                    throw new HttpStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+                });
     }
 
     @Override
-    public Animal getAnimalById(String id) {
+    public CompletableFuture<Animal> getAnimalById(String id) {
         return animalsRepository.findById(id);
     }
 
     @Override
-    public List<Animal> listAnimals() {
+    public CompletableFuture<List<Animal>> listAnimals() {
         return animalsRepository.findAll();
     }
+
     @Override
-    public void deleteAnimal(String id) {
-        animalsRepository.delete(id);
+    public CompletableFuture<Void> deleteAnimal(String id) {
+        return animalsRepository.delete(id);
     }
 }

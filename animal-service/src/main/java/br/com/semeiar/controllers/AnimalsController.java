@@ -6,8 +6,9 @@ import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.*;
 
 import java.util.List;
-@Controller("/animals")
+import java.util.concurrent.CompletableFuture;
 
+@Controller("/animals")
 public class AnimalsController {
 
     private final IAnimalsServices animalsService;
@@ -17,30 +18,30 @@ public class AnimalsController {
     }
 
     @Post
-    public HttpResponse<Animal> createAnimal(@Body Animal animal) {
-        Animal cretaedAnimal = animalsService.createAnimal(animal);
-        return HttpResponse.created(cretaedAnimal);
+    public CompletableFuture<HttpResponse<Animal>> createAnimal(@Body Animal animal) {
+        return animalsService.createAnimal(animal)
+                .thenApply(createdAnimal -> HttpResponse.created(createdAnimal));
     }
 
     @Get("/{id}")
-    public HttpResponse<Animal> getAnimalById(String id) {
-        Animal animal = animalsService.getAnimalById(id);
-        return animal != null ? HttpResponse.ok(animal) : HttpResponse.notFound();
+    public CompletableFuture<HttpResponse<Animal>> getAnimalById(String id) {
+        return animalsService.getAnimalById(id)
+                .thenApply(animal -> animal != null
+                        ? HttpResponse.ok(animal)
+                        : HttpResponse.notFound());
     }
 
-    @Get("/")
-    public HttpResponse<List<Animal>>listAnimais() {
-        List<Animal> animals = animalsService.listAnimals();
-        if(animals.size() > 0){
-            return HttpResponse.ok(animals);
-        }else{
-            return HttpResponse.notFound();
-        }
+    @Get
+    public CompletableFuture<HttpResponse<List<Animal>>> listAnimais() {
+        return animalsService.listAnimals()
+                .thenApply(animals -> animals != null && !animals.isEmpty()
+                        ? HttpResponse.ok(animals)
+                        : HttpResponse.notFound());
     }
 
     @Delete("/{id}")
-    public HttpResponse<Void> delete(String id) {
-        animalsService.deleteAnimal(id);
-        return HttpResponse.ok();
+    public CompletableFuture<HttpResponse<Void>> delete(String id) {
+        return animalsService.deleteAnimal(id)
+                .thenApply(v -> HttpResponse.ok());
     }
 }

@@ -3,10 +3,11 @@ package br.com.semeiar.repository.interfaces;
 import br.com.semeiar.models.Animal;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public interface IAnimalsRepository {
-    Animal save(Animal animal);
-    Animal findById(String id);
-    List<Animal> findAll();
-    void delete(String id);
+    CompletableFuture<Animal> save(Animal animal);
+    CompletableFuture<Animal> findById(String id);
+    CompletableFuture<List<Animal>>findAll();
+    CompletableFuture delete(String id);
 }

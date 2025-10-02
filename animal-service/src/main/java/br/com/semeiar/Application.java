@@ -1,5 +1,6 @@
 package br.com.semeiar;
 
+import io.micronaut.context.ApplicationContext;
 import io.micronaut.runtime.Micronaut;
 
 public class Application {

@@ -1,12 +1,15 @@
 package br.com.semeiar.clients;
 
 import br.com.semeiar.models.UserClientModel;
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.client.annotation.Client;
+import org.reactivestreams.Publisher;
 
-@Client("${user.service.url}/users")
+import java.util.concurrent.CompletableFuture;
+
+@Client(id = "user-service")
 public interface UserClient {
-
-    @Get("/{id}")
-    UserClientModel getUserById(String id);
+    @Get("/users/{id}")
+    CompletableFuture<HttpResponse<UserClientModel>> getUserById(String id);
 }
