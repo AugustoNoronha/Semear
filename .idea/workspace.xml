@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/micronaut-cli.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/test/java/semear/auth/service/SemearAuthServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserCliente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/animal-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/semear-auth-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/user-service">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="32srsKjX70GWlCvqEa4uJpdhWMf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "D:/_dev/Semear/Semear/semear-auth-service",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.animal-service">
+    <configuration name="animal-service" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.semeiar.Application" />
+      <module name="animal-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.semeiar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="semear.auth.service.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="semear.auth.service.Application" />
+      <module name="semear-auth-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="semear.auth.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="user-service" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.semeiar.Application" />
+      <module name="user-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.semeiar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.animal-service" />
+      <item itemvalue="Application.user-service" />
+      <item itemvalue="Application.semear.auth.service.Application" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.semear.auth.service.Application" />
+        <item itemvalue="Application.user-service" />
+        <item itemvalue="Application.animal-service" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="" />
+      <created>1758220327127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758220327127</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/controllers/AnimalsController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/user-service/src/main/java/br/com/semeiar/controllers/UsersController.java</url>
+          <line>24</line>
+          <properties class="br.com.semeiar.controllers.UsersController" method="getUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

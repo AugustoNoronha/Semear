@@ -5,7 +5,7 @@ plugins {
 }
 
 version = "0.1"
-group = "br.com.semeiar"
+group = "semear.auth.service"
 
 repositories {
     mavenCentral()
@@ -14,32 +14,22 @@ repositories {
 dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
-    compileOnly("io.micronaut:micronaut-http-client")
-    runtimeOnly("ch.qos.logback:logback-classic")
-    testImplementation("io.micronaut:micronaut-http-client")
-
-    // Lombok
-    compileOnly 'org.projectlombok:lombok:1.18.34'
-    annotationProcessor 'org.projectlombok:lombok:1.18.34'
-    testCompileOnly 'org.projectlombok:lombok:1.18.34'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
-
-    // AWS SDK v2 para DynamoDB
-    implementation("software.amazon.awssdk:dynamodb")
-    implementation("software.amazon.awssdk:dynamodb-enhanced")
-
-// Micronaut AWS
+    annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
+    implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
+    implementation("io.micronaut.validation:micronaut-validation")
+    implementation("jakarta.validation:jakarta.validation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
 }
 
 
 application {
-    mainClass = "br.com.semeiar.Application"
+    mainClass = "semear.auth.service.Application"
 }
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
 }
 
 
@@ -50,7 +40,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("br.com.semeiar.*")
+        annotations("semear.auth.service.*")
     }
     aot {
         // Please review carefully the optimizations enabled below
@@ -66,9 +56,5 @@ micronaut {
     }
 }
 
-
-tasks.named("dockerfileNative") {
-    jdkVersion = "21"
-}
 
 
