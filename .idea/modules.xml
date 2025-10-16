@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Semear.iml" filepath="$PROJECT_DIR$/.idea/Semear.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/animal-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/animal-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/animal-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/animal-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/semear-auth-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/semear-auth-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/user-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/user-service.test.iml" />
     </modules>

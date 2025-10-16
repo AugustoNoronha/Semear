@@ -1,6 +1,6 @@
 package br.com.semeiar.services;
 
-import br.com.semeiar.clients.UserCliente2;
+import br.com.semeiar.clients.UserCliente;
 import br.com.semeiar.models.Animal;
 import br.com.semeiar.models.UserClientModel;
 import br.com.semeiar.repository.interfaces.IAnimalsRepository;
@@ -18,9 +18,9 @@ import java.util.concurrent.CompletableFuture;
 public class AnimalsServices implements IAnimalsServices {
 
     private final IAnimalsRepository animalsRepository;
-    private final UserCliente2 userClient;
+    private final UserCliente userClient;
 
-    public AnimalsServices(IAnimalsRepository animalsRepository, UserCliente2 userClient) {
+    public AnimalsServices(IAnimalsRepository animalsRepository, UserCliente userClient) {
         this.animalsRepository = animalsRepository;
         this.userClient = userClient;
     }

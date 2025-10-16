@@ -13,9 +13,9 @@ import java.net.URI;
 import java.util.concurrent.CompletableFuture;
 
 @Singleton
-public class UserCliente2 {
+public class UserCliente {
     private final HttpClient httpClient;
-    public UserCliente2(@Client(id = "user-service") HttpClient httpClient) {
+    public UserCliente(@Client(id = "user-service") HttpClient httpClient) {
         this.httpClient = httpClient;
     }
     public CompletableFuture<HttpResponse<UserClientModel>> getUserById(String id) {
