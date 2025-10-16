@@ -21,6 +21,14 @@ dependencies {
     implementation("io.micronaut.validation:micronaut-validation")
     implementation("jakarta.validation:jakarta.validation-api")
     runtimeOnly("ch.qos.logback:logback-classic")
+
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
+    implementation("software.amazon.awssdk:cognitoidentityprovider:2.25.60")
+    implementation("software.amazon.awssdk:sts")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
+    implementation("io.micronaut.validation:micronaut-validation")
+    runtimeOnly("ch.qos.logback:logback-classic")
 }
 
 

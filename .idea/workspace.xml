@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/micronaut-cli.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/test/java/semear/auth/service/SemearAuthServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Services/CognitoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserCliente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/clients/UserCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/animal-service/src/main/java/br/com/semeiar/services/AnimalsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semear-auth-service/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +70,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "auth-service",
     "last_opened_file_path": "D:/_dev/Semear/Semear/semear-auth-service",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",

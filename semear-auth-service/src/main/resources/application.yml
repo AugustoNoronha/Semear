@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: semear-auth-service
+  server:
+    port: 8083
+
+aws:
+  region: sa-east-1  # São Paulo
+  cognito:
+    user-pool-id: SEU_USER_POOL_ID
+    client-id: SEU_APP_CLIENT_ID
