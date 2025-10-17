@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c8f774e-b53b-4e2f-b48e-2c016598debb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Services/CognitoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Controllers/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Models/LoginRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Models/LoginResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Services/Interfaces/ICognitoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/semear-auth-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semear-auth-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Services/CognitoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/semear-auth-service/src/main/java/semear/auth/service/Services/CognitoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
       </list>
