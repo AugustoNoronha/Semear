@@ -1,13 +1,12 @@
 package br.com.semeiar.repository.interfaces;
 
 import br.com.semeiar.models.Animal;
+import io.micronaut.data.annotation.Repository;
+import io.micronaut.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
-public interface IAnimalsRepository {
-    CompletableFuture<Animal> save(Animal animal);
-    CompletableFuture<Animal> findById(String id);
-    CompletableFuture<List<Animal>>findAll();
-    CompletableFuture delete(String id);
+@Repository
+public interface IAnimalsRepository extends CrudRepository<Animal, Long> {
+    List<Animal> findByUsuarioId(Long usuarioId);
 }

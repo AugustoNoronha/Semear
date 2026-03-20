@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Animal Service",
+            "request": "launch",
+            "mainClass": "br.com.semeiar.Application",
+            "projectName": "animal-service"
+        },
+        {
+            "type": "java",
+            "name": "Run User Service",
+            "request": "launch",
+            "mainClass": "br.com.semeiar.Application",
+            "projectName": "user-service"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

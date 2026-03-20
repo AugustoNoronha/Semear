@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserClientModel {
-    private String id;
+    private Long id;
     private String name;
     private String email;
 
-    public void getUserById(String ownerId) {
+    public void getUserById(Long ownerId) {
     }
 }

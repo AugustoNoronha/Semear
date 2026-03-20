@@ -10,8 +10,8 @@ import io.micronaut.http.HttpStatus;
 import io.micronaut.http.exceptions.HttpStatusException;
 import jakarta.inject.Singleton;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 @Singleton
@@ -27,17 +27,17 @@ public class AnimalsServices implements IAnimalsServices {
 
     @Override
     public CompletableFuture<Animal> createAnimal(Animal animal) {
-        return userClient.getUserById(animal.getOwnerId())
-                .thenCompose(response -> {
-                    HttpResponse<UserClientModel> httpResponse = response;
-                    if (httpResponse.getStatus() != HttpStatus.OK) {
-                        throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Usuário não encontrado");
-                    }
+        if(animal.getUsuarioId() == null) {
+            CompletableFuture<Animal> err = new CompletableFuture<>();
+            err.completeExceptionally(new HttpStatusException(HttpStatus.BAD_REQUEST, "usuarioId é obrigatório"));
+            return err;
+        }
 
-                    if (animal.getId() == null) {
-                        animal.setId(UUID.randomUUID().toString());
+        return userClient.getUserById(animal.getUsuarioId())
+                .thenApply(response -> {
+                    if (response.getStatus() != HttpStatus.OK) {
+                        throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Usuário dono não encontrado");
                     }
-
                     return animalsRepository.save(animal);
                 })
                 .exceptionally(e -> {
@@ -46,17 +46,23 @@ public class AnimalsServices implements IAnimalsServices {
     }
 
     @Override
-    public CompletableFuture<Animal> getAnimalById(String id) {
-        return animalsRepository.findById(id);
+    public CompletableFuture<Animal> getAnimalById(Long id) {
+        return CompletableFuture.supplyAsync(() -> animalsRepository.findById(id).orElse(null));
     }
 
     @Override
     public CompletableFuture<List<Animal>> listAnimals() {
-        return animalsRepository.findAll();
+        return CompletableFuture.supplyAsync(() -> {
+            List<Animal> list = new ArrayList<>();
+            animalsRepository.findAll().forEach(list::add);
+            return list;
+        });
     }
 
     @Override
-    public CompletableFuture<Void> deleteAnimal(String id) {
-        return animalsRepository.delete(id);
+    public CompletableFuture<Void> deleteAnimal(Long id) {
+        return CompletableFuture.runAsync(() -> {
+            if(animalsRepository.existsById(id)) animalsRepository.deleteById(id);
+        });
     }
 }

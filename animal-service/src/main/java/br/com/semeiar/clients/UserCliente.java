@@ -18,7 +18,7 @@ public class UserCliente {
     public UserCliente(@Client(id = "user-service") HttpClient httpClient) {
         this.httpClient = httpClient;
     }
-    public CompletableFuture<HttpResponse<UserClientModel>> getUserById(String id) {
+    public CompletableFuture<HttpResponse<UserClientModel>> getUserById(Long id) {
         URI uri = URI.create("/users/" + id);
         HttpRequest<?> req = HttpRequest.GET(uri);
 

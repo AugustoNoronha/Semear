@@ -22,14 +22,15 @@ public class UsersController {
     }
 
     @Get("/{id}")
-    public HttpResponse<User> getUser(String id){
+    public HttpResponse<User> getUser(Long id){
         User user = userService.getUserById(id);
         return user != null ? HttpResponse.ok(user) : HttpResponse.notFound();
     }
+
     @Get("/")
-    public HttpResponse<List<User>>listUsers() {
+    public HttpResponse<List<User>> listUsers() {
         List<User> users = userService.listUsers();
-        if(users.size() > 0){
+        if(!users.isEmpty()){
             return HttpResponse.ok(users);
         }else{
             return HttpResponse.notFound();
@@ -37,9 +38,8 @@ public class UsersController {
     }
 
     @Delete("/{id}")
-    public HttpResponse<Void> deleteUser(String id) {
+    public HttpResponse<Void> deleteUser(Long id) {
         userService.deleteUser(id);
         return HttpResponse.ok();
     }
-
 }

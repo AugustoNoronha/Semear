@@ -5,8 +5,9 @@ import br.com.semeiar.repository.interfaces.IUserRepository;
 import br.com.semeiar.services.interfaces.IUserService;
 import jakarta.inject.Singleton;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+
 @Singleton
 public class UserService implements IUserService {
     private final IUserRepository userRepository;
@@ -17,24 +18,25 @@ public class UserService implements IUserService {
 
     @Override
     public User createUser(User user) {
-        String id = UUID.randomUUID().toString();
-        user.setId(id);
-        user = userRepository.save(user);
-        return user;
+        return userRepository.save(user);
     }
 
     @Override
-    public User getUserById(String id) {
-        return userRepository.findById(id);
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<User> listUsers() {
-        return userRepository.findAll();
+        List<User> list = new ArrayList<>();
+        userRepository.findAll().forEach(list::add);
+        return list;
     }
 
     @Override
-    public void deleteUser(String id) {
-        userRepository.delete(id);
+    public void deleteUser(Long id) {
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+        }
     }
 }

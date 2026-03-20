@@ -24,7 +24,7 @@ public class AnimalsController {
     }
 
     @Get("/{id}")
-    public CompletableFuture<HttpResponse<Animal>> getAnimalById(String id) {
+    public CompletableFuture<HttpResponse<Animal>> getAnimalById(Long id) {
         return animalsService.getAnimalById(id)
                 .thenApply(animal -> animal != null
                         ? HttpResponse.ok(animal)
@@ -40,7 +40,7 @@ public class AnimalsController {
     }
 
     @Delete("/{id}")
-    public CompletableFuture<HttpResponse<Void>> delete(String id) {
+    public CompletableFuture<HttpResponse<Void>> delete(Long id) {
         return animalsService.deleteAnimal(id)
                 .thenApply(v -> HttpResponse.ok());
     }

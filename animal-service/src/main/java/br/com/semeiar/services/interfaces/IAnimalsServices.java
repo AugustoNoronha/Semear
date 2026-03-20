@@ -7,7 +7,7 @@ import java.util.concurrent.CompletableFuture;
 
 public interface IAnimalsServices {
     CompletableFuture<Animal> createAnimal(Animal animal);
-    CompletableFuture<Animal> getAnimalById(String id);
+    CompletableFuture<Animal> getAnimalById(Long id);
     CompletableFuture<List<Animal>> listAnimals();
-    CompletableFuture deleteAnimal(String id);
+    CompletableFuture<Void> deleteAnimal(Long id);
 }
